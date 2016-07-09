@@ -57,7 +57,7 @@ function pay2go_vacc_config() {
         // defined here for backwards compatibility
         'FriendlyName' => array(
             'Type' => 'System',
-            'Value' => 'ATM',
+            'Value' => 'ATM 轉帳',
         ),
         // a text field type allows for single line text input
         'MerchantID' => array(
