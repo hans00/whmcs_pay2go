@@ -1,23 +1,11 @@
 <?php
 /**
- * WHMCS Merchant Gateway 3D Secure Callback File
- *
- * The purpose of this file is to demonstrate how to handle the return post
- * from a 3D Secure Authentication process.
- *
- * It demonstrates verifying that the payment gateway module is active,
- * validating an Invoice ID, checking for the existence of a Transaction ID,
- * Logging the Transaction for debugging and Adding Payment to an Invoice.
- *
- * Users are expected to be redirected to this file as part of the 3D checkout
- * flow so it also demonstrates redirection to the invoice upon completion.
- *
- * For more information, please refer to the online documentation.
+ * WHMCS Pay2Go Callback
  *
  * @see http://docs.whmcs.com/Gateway_Module_Developer_Docs
  *
- * @copyright Copyright (c) WHMCS Limited 2015
- * @license http://www.whmcs.com/license/ WHMCS Eula
+ * @copyright Copyright (c) Hans 2016
+ * @license https://github.com/hans00/whmcs_pay2go/blob/master/LICENSE
  */
 
 // Require libraries needed for gateway module functions.
@@ -100,7 +88,6 @@ checkCbTransID($transactionId);
  */
 logTransaction($params['name'], $result, $transactionStatus);
 
-//$paymentSuccess = false;
 
 if ($transactionStatus=='Success') {
 
@@ -126,14 +113,3 @@ if ($transactionStatus=='Success') {
     //$paymentSuccess = true;
 
 }
-
-/**
- * Redirect to invoice.
- *
- * Performs redirect back to the invoice upon completion of the 3D Secure
- * process displaying the transaction result along with the invoice.
- *
- * @param int $invoiceId        Invoice ID
- * @param bool $paymentSuccess  Payment status
- */
-//callback3DSecureRedirect($invoiceId, $paymentSuccess);
